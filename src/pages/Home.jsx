@@ -17,10 +17,10 @@ function Home() {
             My Resume
           </a>
           <a href="Social" className="connect">
-            Follow Me on social media{" "}
+            Follow Me on social media
           </a>
           <a href="Connect" className="connect">
-            let's talk!{" "}
+            let's talk!
           </a>
         </div>
       </div>
