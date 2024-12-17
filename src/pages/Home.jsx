@@ -16,10 +16,10 @@ function Home() {
           <a href="" className="connect">
             My Resume
           </a>
-          <a href="Social" className="connect">
+          <a href="./Social" className="connect">
             Follow Me on social media
           </a>
-          <a href="Connect" className="connect">
+          <a href="./Connect" className="connect">
             let's talk!
           </a>
         </div>
