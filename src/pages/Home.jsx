@@ -1,6 +1,7 @@
 import profilePic from "../assets/saikrishna.png";
 import Social from "../pages/Social";
 import Connect from "../pages/Connect";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <>
@@ -13,15 +14,10 @@ function Home() {
           framework built with React.
         </p>
         <div className="connect-flex">
-          <a href="" className="connect">
-            My Resume
-          </a>
-          <a href="./Social" className="connect">
-            Follow Me on social media
-          </a>
-          <a href="./Connect" className="connect">
-            let's talk!
-          </a>
+<Link to="/" className="connect">My Resume</Link> 
+<Link to="/social" className="connect">Follow Me on social media</Link>
+<Link to="/connect" className="connect">Let's talk!</Link>
+
         </div>
       </div>
     </>
