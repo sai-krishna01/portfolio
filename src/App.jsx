@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
 import './App.css'
 import {Route, Routes, Link} from 'react-router-dom'
 import Home from './pages/Home'
@@ -17,12 +13,10 @@ function App() {
       <Link to='/' className='nav-link'>home</Link>
       <Link to='/projects' className='nav-link'>Projects</Link>
       <Link to='/Social' className='nav-link'>Social Links</Link>
-      <Link to='/Connect' className='nav-link'>Let's Talk</Link>
+      <Link to='/Connect' className='nav-link'>Let&apos;s Talk</Link>
 
  </nav>
 
- {/* I'm a frontend developer, optimist, and community builder. I work at Vercel,
-  where I teach the Next.js community, an open-source web framework built with React. */}
 
 <Routes>
   <Route path='/' element={<Home/>} />
