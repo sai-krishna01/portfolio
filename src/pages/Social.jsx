@@ -2,11 +2,9 @@ function Social() {
   return (
     <>
       <div className="home-container">
-        <h2>Connect with me over social media</h2>
+        <h2>Connect with me over Social Media</h2>
         <p>
-          I'm a frontend developer, optimist, and community builder. I work at
-          Vercel, where I teach the Next.js community, an open-source web
-          framework built with React.
+        A MERN stack developer, problem solver, and community enthusiast, I specialize in crafting dynamic web solutions and empowering students with technology to achieve their goals.
         </p>
         <div className="connect-flex">
           <a

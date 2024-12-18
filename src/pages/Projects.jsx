@@ -17,6 +17,7 @@ function Projects() {
             <div className="p-flex">
               <h4>Todo Web-App</h4>
               <div className="share-icon">
+                <a href="https://todo-app-pi-nine-44.vercel.app/" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -30,6 +31,8 @@ function Projects() {
                     d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"
                   />
                 </svg>
+                </a>
+                
               </div>
             </div>
             <p className="desc">Lorem ipsum dolor sit amet consectetur.</p>
@@ -40,6 +43,7 @@ function Projects() {
             <div className="p-flex">
               <h4>Weather report</h4>
               <div className="share-icon">
+                <a href="https://weather-report-bay.vercel.app/" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -53,6 +57,8 @@ function Projects() {
                     d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"
                   />
                 </svg>
+                </a>
+
               </div>
             </div>
             <p className="desc">Lorem ipsum dolor sit amet consectetur.</p>

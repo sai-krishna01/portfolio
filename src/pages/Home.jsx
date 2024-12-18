@@ -9,13 +9,11 @@ function Home() {
         <img src={profilePic} className="user" alt="" />
         <h2>Hey I am Sai Krishna!</h2>
         <p>
-          I'm a frontend developer, optimist, and community builder. I work at
-          Vercel, where I teach the Next.js community, an open-source web
-          framework built with React.
+        A MERN stack developer, problem solver, and community enthusiast, I specialize in crafting dynamic web solutions and empowering students with technology to achieve their goals.
         </p>
         <div className="connect-flex">
 <Link to="/" className="connect">My Resume</Link> 
-<Link to="/social" className="connect">Follow Me on social media</Link>
+<Link to="/social" className="connect">Follow Me on Social Media</Link>
 <Link to="/connect" className="connect">Let's talk!</Link>
 
         </div>
