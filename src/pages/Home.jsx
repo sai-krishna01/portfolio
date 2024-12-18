@@ -1,6 +1,4 @@
 import profilePic from "../assets/saikrishna.png";
-// import Social from "../pages/Social";
-// import Connect from "../pages/Connect";
 import { Link } from "react-router-dom";
 function Home() {
   return (
