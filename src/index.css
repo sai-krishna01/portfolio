@@ -65,3 +65,24 @@
 .share-icon{
   transform: rotate(45deg);
 }
+
+@media (max-width: 767px) {
+  .home-container{
+    display: grid;
+    width: 380px;
+  }
+  .navbar{
+    width: 360px;
+  }
+  .connect{
+    height: 38px;
+  }
+  .connect-flex{
+    display: grid;
+    width: 380px;
+  }
+  .project-flex{
+    display: grid;
+    margin: 12px auto;
+  }
+}
