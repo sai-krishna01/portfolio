@@ -1,99 +1,59 @@
-import Todo from "../assets/todo.png";
-import Weather from "../assets/weather.png";
-import Portfolio from "../assets/portfolio.png";
+import Todo from '../assets/todo.png'
+import Weather from '../assets/weather.png'
+import Portfolio from '../assets/portfolio.png'
 
+const projects = [
+  {
+    name: 'Todo Web App',
+    image: Todo,
+    type: 'Productivity',
+    description: 'Task management app with smooth interactions and live updates.',
+    link: 'https://todo-app-pi-nine-44.vercel.app/',
+  },
+  {
+    name: 'Weather Report',
+    image: Weather,
+    type: 'API Integration',
+    description: 'Real-time weather forecasts with a minimal, mobile-first interface.',
+    link: 'https://weather-report-bay.vercel.app/',
+  },
+  {
+    name: 'Portfolio Classic',
+    image: Portfolio,
+    type: 'Personal Brand',
+    description: 'The previous version of my portfolio website for comparison.',
+    link: 'https://portfolio-mu-one-72.vercel.app/',
+  },
+]
 
 function Projects() {
   return (
-    <>
-      <div className="home-container">
-        <h2>My recent Projects</h2>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-          commodi aliquid vero odit consequatur?
-        </p>
+    <div className="home-container card-surface">
+      <h2>Featured Projects</h2>
+      <p>
+        Curated work samples that show my front-end polish, API integration skills, and ability to
+        ship responsive interfaces quickly.
+      </p>
 
-        <div className="project-flex">
-          <div className="card">
-            <img src={Todo} alt="" />
+      <div className="project-flex">
+        {projects.map((project) => (
+          <article className="card" key={project.name}>
+            <img src={project.image} alt={project.name} />
             <div className="p-flex">
-              <h4>Todo Web-App</h4>
-              <div className="share-icon">
-                <a href="https://todo-app-pi-nine-44.vercel.app/" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  className="bi bi-arrow-up-short"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"
-                  />
-                </svg>
-                </a>
-                
+              <div>
+                <h4>{project.name}</h4>
+                <small>{project.type}</small>
               </div>
+              <a href={project.link} target="_blank" rel="noreferrer" className="share-link">
+                ↗
+              </a>
             </div>
-            <p className="desc">Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-
-          <div className="card">
-            <img src={Weather} alt="" />
-            <div className="p-flex">
-              <h4>Weather report</h4>
-              <div className="share-icon">
-                <a href="https://weather-report-bay.vercel.app/" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  className="bi bi-arrow-up-short"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"
-                  />
-                </svg>
-                </a>
-
-              </div>
-            </div>
-            <p className="desc">Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-          <div className="card">
-            <img src={Portfolio} alt="" />
-            <div className="p-flex">
-              <h4>Todo Web-App</h4>
-              <div className="share-icon">
-                <a href="https://portfolio-mu-one-72.vercel.app/" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  className="bi bi-arrow-up-short"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"
-                  />
-                </svg>
-                </a>
-                
-              </div>
-            </div>
-            <p className="desc">Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-        </div>
+            <p className="desc">{project.description}</p>
+          </article>
+        ))}
       </div>
-    </>
-  );
+    </div>
+  )
 }
 
-export default Projects;
+export default Projects

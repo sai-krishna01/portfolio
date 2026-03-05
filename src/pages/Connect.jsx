@@ -1,31 +1,31 @@
+const checklist = [
+  'Briefly describe your idea or feature request',
+  'Share your timeline and delivery expectations',
+  'Mention your preferred tech stack or constraints',
+  'Include budget range for better planning',
+]
+
 function Connect() {
   return (
-    <>
-      <div className="home-container">
-        <h2>Have a project or an idea? Let&apos;s Connect over a WhatsApp Chat!</h2>
-        <p>
-        A MERN stack developer, problem solver, and community enthusiast, I specialize in crafting dynamic web solutions and empowering students with technology to achieve their goals.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt cumque
-          magnam esse!
-        </p>
+    <div className="home-container card-surface">
+      <h2>Have a project in mind? Let&apos;s build it together.</h2>
+      <p>
+        Fastest response channel: WhatsApp. Drop a concise brief and I will get back with next
+        steps, scope estimate, and timeline.
+      </p>
 
-        <ul>
-          <li>Mension your idea/requirement</li>
-          <li>keep the content Crisp!</li>
-          <li>What help you need from me</li>
-          <li>Do you have any budget</li>
-          <li>Any thing else I shouls know befor we connect!</li>
-        </ul>
-        <div className="connect-flex">
-          <a href="https://wa.me/+919502936337?" target="_blank" className="connect">
-            Let&apos;s Connect Through a Chat!
-          </a>
-        </div>
+      <ul className="checklist">
+        {checklist.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <div className="connect-flex">
+        <a href="https://wa.me/+919502936337" target="_blank" rel="noreferrer" className="connect cta">
+          Start WhatsApp Chat
+        </a>
       </div>
-    </>
-  );
+    </div>
+  )
 }
 
-export default Connect;
+export default Connect
