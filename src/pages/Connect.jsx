@@ -1,31 +1,50 @@
-function Connect() {
-  return (
-    <>
-      <div className="home-container">
-        <h2>Have a project or an idea? Let&apos;s Connect over a WhatsApp Chat!</h2>
-        <p>
-        A MERN stack developer, problem solver, and community enthusiast, I specialize in crafting dynamic web solutions and empowering students with technology to achieve their goals.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt cumque
-          magnam esse!
-        </p>
+import { useState } from 'react'
 
-        <ul>
-          <li>Mension your idea/requirement</li>
-          <li>keep the content Crisp!</li>
-          <li>What help you need from me</li>
-          <li>Do you have any budget</li>
-          <li>Any thing else I shouls know befor we connect!</li>
-        </ul>
-        <div className="connect-flex">
-          <a href="https://wa.me/+919502936337?" target="_blank" className="connect">
-            Let&apos;s Connect Through a Chat!
-          </a>
-        </div>
+const checklist = [
+  'Briefly describe your idea or feature request',
+  'Share your timeline and delivery expectations',
+  'Mention your preferred tech stack or constraints',
+  'Include budget range for better planning',
+]
+
+const email = 'sai.krishna.devmail@gmail.com'
+
+function Connect() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(email)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1800)
+  }
+
+  return (
+    <section className="home-container card-surface">
+      <h2>Have a project in mind? Let&apos;s build it together.</h2>
+      <p>
+        Fastest response channel: WhatsApp. Send a concise brief and I&apos;ll respond with scope,
+        timeline, and next steps.
+      </p>
+
+      <ul className="checklist">
+        {checklist.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+
+      <div className="connect-flex">
+        <a href="https://wa.me/+919502936337" target="_blank" rel="noreferrer" className="connect cta">
+          Start WhatsApp Chat
+        </a>
+        <a href={`mailto:${email}`} className="connect">
+          Send Email
+        </a>
+        <button type="button" className="connect" onClick={handleCopy}>
+          {copied ? 'Email Copied ✅' : 'Copy Email Address'}
+        </button>
       </div>
-    </>
-  );
+    </section>
+  )
 }
 
-export default Connect;
+export default Connect
