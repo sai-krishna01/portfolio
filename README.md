@@ -1,9 +1,31 @@
-# React + Vite
+# Sai Krishna Portfolio (v3.0)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + Vite portfolio focused on clean UI, responsive UX, and fast navigation.
 
-Currently, two official plugins are available:
+## What changed in this update
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# portfolio" 
+- Refreshed visual design with glassmorphism-inspired cards, improved spacing, and better contrast.
+- Added mobile navigation toggle for a smoother phone experience.
+- Added feature-focused home section with skill chips and impact stats.
+- Added project category filters for faster discovery.
+- Enhanced contact section with email + clipboard copy action.
+
+## Tech stack
+
+- React
+- React Router
+- Vite
+- CSS (responsive-first)
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
