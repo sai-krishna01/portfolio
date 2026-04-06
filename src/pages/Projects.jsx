@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import Todo from '../assets/todo.png'
 import Weather from '../assets/weather.png'
 import Portfolio from '../assets/portfolio.png'
@@ -26,17 +27,39 @@ const projects = [
   },
 ]
 
+const filters = ['All', 'Productivity', 'API Integration', 'Personal Brand']
+
 function Projects() {
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  const visibleProjects = useMemo(() => {
+    if (activeFilter === 'All') return projects
+    return projects.filter((project) => project.type === activeFilter)
+  }, [activeFilter])
+
   return (
-    <div className="home-container card-surface">
+    <section className="home-container card-surface">
       <h2>Featured Projects</h2>
       <p>
-        Curated work samples that show my front-end polish, API integration skills, and ability to
-        ship responsive interfaces quickly.
+        Filter by category to quickly discover product-focused builds, API-driven features, and
+        branding work.
       </p>
 
+      <div className="filter-row" role="tablist" aria-label="Project categories">
+        {filters.map((filter) => (
+          <button
+            type="button"
+            key={filter}
+            className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+            onClick={() => setActiveFilter(filter)}
+          >
+            {filter}
+          </button>
+        ))}
+      </div>
+
       <div className="project-flex">
-        {projects.map((project) => (
+        {visibleProjects.map((project) => (
           <article className="card" key={project.name}>
             <img src={project.image} alt={project.name} />
             <div className="p-flex">
@@ -52,7 +75,7 @@ function Projects() {
           </article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

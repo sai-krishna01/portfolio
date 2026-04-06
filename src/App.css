@@ -7,13 +7,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg: #f3f6fb;
+  --bg: #eef3ff;
   --surface: #ffffff;
   --text: #111827;
   --subtle: #4b5563;
   --border: #dbe2ee;
   --accent: #2563eb;
   --accent-soft: #dbeafe;
+  --shadow: 0 12px 35px rgba(37, 99, 235, 0.1);
 }
 
 :root[data-theme='dark'] {
@@ -24,6 +25,7 @@
   --border: #243252;
   --accent: #60a5fa;
   --accent-soft: #1d3b66;
+  --shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -37,9 +39,18 @@ body {
 }
 
 .app-shell {
-  width: min(980px, 92vw);
+  width: min(1020px, 92vw);
   margin: 0 auto;
   padding: 1.25rem 0 2.5rem;
+}
+
+.card-surface {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(1rem, 3vw, 1.6rem);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
 }
 
 .header {
@@ -58,20 +69,37 @@ body {
   background: var(--accent-soft);
   color: var(--accent);
   font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .header h1 {
   margin: 0.35rem 0 0;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
-.theme-toggle {
+.tagline {
+  margin: 0.35rem 0 0;
+  color: var(--subtle);
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.theme-toggle,
+.menu-toggle,
+.filter-btn {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
   color: var(--text);
   padding: 0.5rem 0.95rem;
   cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .navbar {
@@ -89,6 +117,7 @@ body {
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
   background: var(--surface);
+  transition: 0.2s ease;
 }
 
 .nav-link.active {
@@ -98,13 +127,6 @@ body {
 
 .home-container {
   width: 100%;
-}
-
-.card-surface {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: clamp(1rem, 3vw, 1.6rem);
 }
 
 .hero {
@@ -125,6 +147,21 @@ body {
   color: var(--accent);
   margin: 0;
   font-weight: 600;
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
 }
 
 .connect-flex,
@@ -149,11 +186,16 @@ body {
   flex-direction: column;
   gap: 0.2rem;
   background: var(--surface);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
 }
 
 .connect:hover,
 .theme-toggle:hover,
-.share-link:hover {
+.share-link:hover,
+.filter-btn:hover,
+.menu-toggle:hover {
   transform: translateY(-1px);
 }
 
@@ -171,6 +213,28 @@ body {
   color: var(--subtle);
 }
 
+.mini-card strong {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.mini-card p {
+  margin: 0.2rem 0 0;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.filter-btn.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .project-flex {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 1rem;
@@ -180,6 +244,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 0.7rem;
+  background: var(--surface);
 }
 
 .card img {
@@ -200,7 +265,9 @@ body {
   margin: 0;
 }
 
-.p-flex small {
+.p-flex small,
+.desc,
+.checklist {
   color: var(--subtle);
 }
 
@@ -215,10 +282,6 @@ body {
   color: var(--text);
 }
 
-.desc {
-  color: var(--subtle);
-}
-
 .social-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 1rem;
@@ -226,7 +289,6 @@ body {
 
 .checklist {
   padding-left: 1rem;
-  color: var(--subtle);
 }
 
 .cta {
@@ -234,6 +296,11 @@ body {
   color: #fff;
   border-color: var(--accent);
   font-weight: 600;
+}
+
+.cta-outline {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 @media (max-width: 900px) {
@@ -245,7 +312,19 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.open {
+    display: flex;
+  }
+
   .header {
     flex-direction: column;
     align-items: flex-start;
